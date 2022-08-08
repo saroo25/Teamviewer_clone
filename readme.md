@@ -30,7 +30,7 @@ L'applicativo è stato realizzato completamente in Electron, ciò ha consentito 
 
 In primo luogo è necessario clonare la repo utilizzando il seguente comando: 
 ```
-git clone https://github.com/saroo25/Progetto_Web.git
+git clone https://github.com/saroo25/Teamviewer_clone.git
 ```
 
 Successivamente nella cartella colonata è necessario spostarsi nella cartella server, da questa posizione è possibile installare tutte le dipendenze lanciando:
