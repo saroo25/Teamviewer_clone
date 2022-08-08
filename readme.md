@@ -1,114 +1,76 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+ <img width=200px height=200px src="https://cdn-icons-png.flaticon.com/512/1322/1322086.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Project Title</h3>
+<h3 align="center">Teamviewer clone</h3>
 
-<div align="center">
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-</div>
-
----
-
-<p align="center"> Few lines describing your project.
+<p align="center"> Il progetto ha come obbiettivo quello di far comunicare due client, un client share ed uno control.
+Il client share condivide il proprio schermo. Il client control tramite il codice del client share può connettersi e prendere il controllo di mouse e tastiera.
     <br> 
 </p>
 
-## 📝 Table of Contents
+## 📝 Contenuto
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Lo scopo è stato quello di creare un applicativo che potesse essere utilizzato in ogni dispositivo, il risultato è stato raggiunto grazie al framework Electron.
+L'applicativo è stato realizzato completamente in Electron, ciò ha consentito il build di un eseguibile che è possibile avviare senza l'installazione di nessun tipo di pacchetto aggiuntivo, inoltre per sua natura essendo Electron composto da un browser web e un server node interno, la portabilità dell'applicativo a web app è pressochè immediata.
+
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+In primo luogo è necessario clonare la repo utilizzando il seguente comando: 
+```
+git clone https://github.com/saroo25/Progetto_Web.git
+```
+
+Successivamente nella cartella colonata è necessario spostarsi nella cartella server, da questa posizione è possibile installare tutte le dipendenze lanciando:
+```
+npm install
+```
+In fine il server va lanciato con il comando:
+```
+npm start
+```
+La stessa procedura va effettuata per la cartella my-electron-app, è inoltre possibile creare un eseguibile della stessa app con il comando:
+```
+electron-packager ./ screenshare --platform=win32 --arch=x64 --overwrite
+```
+
+
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+Sono necessari node versione 16.16.0 ed npm versione 8.11.0.
+Tutte le altre dipendenze saranno installate una volta lanciato npm install.
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
+E' consigliato sostituire la riga 10 del file app.js e la riga 10 del file control.js , qui riportate:
+```javascript
+const socket = require('socket.io-client')('https://28ef-37-179-147-177.eu.ngrok.io',{transports: ['websocket']});
+```
+cambiando l'url e inserendo l'url che fa riferimento all'hosting del vostro server.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Socket.IO](https://socket.io/) 
+- [NodeJs](https://nodejs.org/en/)
+- [Electron](https://www.electronjs.org/)
+- [Jquery](https://jquery.com/)
+- [Robotjs](http://robotjs.io/)
+- [Dialogs](https://github.com/jameskyburz/dialogs)
 
-## ✍️ Authors <a name = "authors"></a>
+## ✍️ Author <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- Rosario Forte
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
