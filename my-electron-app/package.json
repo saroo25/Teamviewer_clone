@@ -1,0 +1,61 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "none",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "none",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "rebuild": "electron-rebuild -f -w robotjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "saroo25",
+  "license": "ISC",
+  "dependencies": {
+    "dialogs": "^2.0.1",
+    "jquery": "^3.6.0",
+    "robotjs": "^0.6.0",
+    "screen-size-detector": "^1.0.4",
+    "screenshot-desktop": "^1.12.7",
+    "socket.io-client": "^4.5.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "web"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron-packager": "^15.5.1",
+    "electron-rebuild": "^3.2.9"
+  }
+}
